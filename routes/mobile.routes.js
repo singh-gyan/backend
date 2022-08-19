@@ -1,4 +1,3 @@
-const mongoose = require('mongoose');
 const express = require('express');
 const Mobile = require('../models/mobile.model');
 const router = express.Router();

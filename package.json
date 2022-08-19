@@ -6,7 +6,7 @@
   "repository": "https://github.com/singh-gyan/Ecommerce.git",
   "author": "Abhigyan",
   "license": "MIT",
-  "scripts":{
+  "scripts": {
     "start": "nodemon index.js"
   },
   "dependencies": {
