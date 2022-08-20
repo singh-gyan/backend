@@ -17,7 +17,7 @@ const {
   userRoutes,
 } = require('./routes');
 mongoose
-  .connect(process.env.DB_CONNECTION, {
+  .connect(process.env.MONGODB_URI || process.env.DB_CONNECTION, {
     dbName: 'FlipKartData',
     useNewUrlParser: true,
   })
