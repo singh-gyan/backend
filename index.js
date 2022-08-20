@@ -15,9 +15,15 @@ const {
   signupRoutes,
   loginRoutes,
   userRoutes,
+  tvRoutes,
+  laptopRoutes,
 } = require('./routes');
+const { guitarModel, headphoneModel, mobileModel } = require('./models');
+const Dump = require('./models/datadump.model');
+const Tv = require('./models/tv.model');
+const Laptop = require('./models/laptop.model');
 mongoose
-  .connect(process.env.MONGODB_URI || process.env.DB_CONNECTION, {
+  .connect(process.env.DB_CONNECTION, {
     dbName: 'FlipKartData',
     useNewUrlParser: true,
   })
@@ -27,11 +33,14 @@ mongoose
   .catch(err => {
     console.error(`Error connecting to the database. \n${err}`);
   });
+// transformData(Dump, Laptop);
 
 app.use('/', homeRoutes);
 app.use('/mobile', mobileRoutes);
 app.use('/headphone', headphoneRoutes);
 app.use('/guitar', guitarRoutes);
+app.use('/tv', tvRoutes);
+app.use('/laptop', laptopRoutes);
 app.use('/signup', signupRoutes);
 app.use('/login', loginRoutes);
 app.use('/user', userRoutes);

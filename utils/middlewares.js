@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 
-const deleteProductData = dataDump => {
+const deleteProductData = async Dump => {
   dataDump.forEach(dump => {
     if (dump.company.includes('headphone')) {
       Mobile.deleteOne({ id: dump.id })
@@ -14,7 +14,8 @@ const deleteProductData = dataDump => {
   });
 };
 
-function transformData(dataDump, product) {
+const transformData = async (Dump, product) => {
+  const dataDump = await Dump.find({});
   dataDump.forEach((data, index) => {
     product.create({
       id: Math.floor(Math.random() * 100000 + 1),
@@ -28,7 +29,7 @@ function transformData(dataDump, product) {
       }),
     });
   });
-}
+};
 function authenticateToken(req, res, next) {
   const authHeader = req.headers['authorization'];
   const token = authHeader && authHeader.split(' ')[1];

@@ -5,6 +5,8 @@ const guitarRoutes = require('./guitar.routes');
 const signupRoutes = require('./signup.routes');
 const loginRoutes = require('./login.routes');
 const userRoutes = require('./user.routes');
+const tvRoutes = require('./tv.routes');
+const laptopRoutes = require('./laptop.routes');
 
 module.exports = {
   homeRoutes,
@@ -14,4 +16,6 @@ module.exports = {
   signupRoutes,
   loginRoutes,
   userRoutes,
+  tvRoutes,
+  laptopRoutes,
 };
